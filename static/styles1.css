@@ -1,58 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
 .container {
-    max-width: 800px;
-    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
 }
 
 .header {
     text-align: center;
-    color: #333;
+    margin-top: 0;
 }
 
 .divider {
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    margin: 20px 0;
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+    margin: 0 20px;
 }
 
 .side {
-    width: 45%;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 20px;
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
 }
 
-h3 {
-    color: #666;
-    margin-bottom: 10px;
-}
-
-p {
+.side h3 {
+    margin-top: 0;
     color: #333;
+}
+
+.side p {
+    margin: 0;
     line-height: 1.5;
 }
 
-/* Additional styling, you can customize this further */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+.colored-divider {
+    width: 5px;
+    height: 100%;
+    background-color: #4CAF50;
+    margin: 0 20px;
 }
-
-.container {
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    padding: 20px;
-}
-
-.side {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.divider {
-    margin-bottom: 30px;
-}
-
-

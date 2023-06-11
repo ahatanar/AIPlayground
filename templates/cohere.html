@@ -3,6 +3,7 @@
 <head>
     <title>Cohere Webpage</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+    
 </head>
 <body>
     <header>
@@ -10,29 +11,26 @@
             <img src="static/cohere.png" alt="COhere">
         </div>
     </header>
+    
     <div id="instructions-container">
-        <label for="instructions-input">Instructions:</label>
-        <textarea id="instructions-input" rows="4" cols="50" placeholder="Enter your instructions"></textarea>
+        <p>Enter text for the Cohere Summarize and Generate prompts or travel to the classify seciton to check out the classify feature!
+        </p>
     </div>
-</footer>
+    
     <main>
         <section>
             <h2>Options</h2>
             <div class="option">
-                <form id="summarize-form" action="/cohere" method="post">
-                    <label for="summarize-input">Summarize</label>
-                    <textarea id="summarize-input" name="prompt" rows="4" cols="50" placeholder="Enter your text"></textarea>
-                    <input type="hidden" name="action" value="summarize">
-                    <button type="submit">Submit</button>
-                </form>
+                    <form action="/cohere-request" method="POST">
+                        <input type="text" name="prompt" placeholder="Enter a prompt">
+                        <button type="submit" name="action" value="generate">Generate</button>
+                    </form>
             </div>
-
+           
             <div class="option">
-                <form id="generate-form" action="/cohere" method="post">
-                    <label for="generate-input">Generate</label>
-                    <textarea id="generate-input" name="prompt" rows="4" cols="50" placeholder="Enter your text"></textarea>
-                    <input type="hidden" name="action" value="generate">
-                    <button type="submit">Submit</button>
+                <form action="/cohere-request" method="POST">
+                    <input type="text" name="prompt" placeholder="Enter a prompt">
+                    <button type="submit" name="action" value="summarize">Summarize</button>
                 </form>
             </div>
         </section>
@@ -46,7 +44,7 @@
     </main>
 
     <footer>
-       
+    </footer>
 </body>
 </html>
 

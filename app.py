@@ -11,13 +11,20 @@ def index():
     
     return render_template('landing.html')
 
-@app.route('/cohere', methods=['POST'])
-def compare():
-    # prompt = request.form['prompt']
-    # action = request.form.get('action')
-    # cohere_response = get_cohere_response(prompt,action)
+
+@app.route('/cohere',methods=['GET'])
+def cohere():
 
     return render_template('cohere.html')
+
+@app.route('/cohere-request', methods=['POST'])
+def compare():
+    print(request.form)
+    prompt = request.form.get('prompt')
+    action = request.form.get('action')
+    cohere_response = get_cohere_response(prompt,action)
+
+    return render_template('result.html', prompt=prompt, cohere_response=cohere_response)
 
 
   

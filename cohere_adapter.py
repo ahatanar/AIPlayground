@@ -19,7 +19,7 @@ def get_cohere_response(prompt,action):
 
     response = requests.post(url, json=data, headers=headers,verify=False)
     response_json = response.json()
-    print(response)
+    print(response_json)
     generations = response_json.get('generations', [])
     if generations:
         return generations[0].get('text', '')
