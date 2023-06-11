@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparison Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Comparison Tool</h1>
+    
+    <form action="/cohere" method="POST">
+        <input type="text" name="prompt" placeholder="Enter a prompt">
+        <button type="submit" name="action" value="summarize">Summarize</button>
+        <button type="submit" name="action" value="generate">Generate</button>
+        <button type="submit" name="action" value="classify">Classify</button>
+    </form>
+    
+    <!-- Add more buttons or forms here if needed -->
+    
+</body>
+</html>
+

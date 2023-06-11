@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cohere Webpage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="static/cohere.png" alt="COhere">
+        </div>
+    </header>
+    <div id="instructions-container">
+        <label for="instructions-input">Instructions:</label>
+        <textarea id="instructions-input" rows="4" cols="50" placeholder="Enter your instructions"></textarea>
+    </div>
+</footer>
+    <main>
+        <section>
+            <h2>Options</h2>
+            <div class="option">
+                <form id="summarize-form" action="/cohere" method="post">
+                    <label for="summarize-input">Summarize</label>
+                    <textarea id="summarize-input" name="prompt" rows="4" cols="50" placeholder="Enter your text"></textarea>
+                    <input type="hidden" name="action" value="summarize">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="option">
+                <form id="generate-form" action="/cohere" method="post">
+                    <label for="generate-input">Generate</label>
+                    <textarea id="generate-input" name="prompt" rows="4" cols="50" placeholder="Enter your text"></textarea>
+                    <input type="hidden" name="action" value="generate">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <div id="classify-container">
+            <form action="/classify" method="get">
+                <button type="submit" class="button">Go to Classify</button>
+                <span class="arrow">&#10148;</span>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+       
+</body>
+</html>
+
+

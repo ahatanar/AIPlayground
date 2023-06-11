@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparison Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">Prompt: {{ prompt }}</h2>
+        <div class="divider"></div>
+        <div class="side">
+            <h3>Google Bards Response:</h3>
+            <p>{{ google_bard_response }}</p>
+        </div>
+        <div class="side">
+            <h3>Cohere Response:</h3>
+            <p>{{ cohere_response }}</p>
+        </div>
+    </div>
+</body>
+</html>
