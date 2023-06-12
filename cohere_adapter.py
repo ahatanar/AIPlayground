@@ -12,16 +12,29 @@ def get_cohere_response(prompt,action):
         'Authorization': f'Bearer {cohere_api_key}'
     }
 
-    data = {
-        'prompt': prompt,
-        'num_completions': 1,
+
+    if action == 'summarize':
+       data = {
+        'text': prompt,
+        'length': 'auto',
     }
 
+    else:
+        data = {
+            'prompt': prompt,
+            'num_completions': 5,
+        }
+
     response = requests.post(url, json=data, headers=headers,verify=False)
+    
     response_json = response.json()
     print(response_json)
-    generations = response_json.get('generations', [])
-    if generations:
-        return generations[0].get('text', '')
+    if response.status_code == 200:
+        generations = response_json.get('generations', [])
+        if generations:
+            return generations[0].get('text', '')
+        else:
+            return 'Error: Failed to retrieve response from Cohere API'
     else:
-        return 'Error: Failed to retrieve response from Cohere API'
+            error_message = response_json.get('message', 'Unknown error occurred')
+            return f'Error: {error_message}'
